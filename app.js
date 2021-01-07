@@ -1,4 +1,5 @@
 // Get the packages
+require('./models/User')
 const express = require('express');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
@@ -6,6 +7,7 @@ const users = require('./routes/users');
 // initialize or start Express framework
 const app = express()
 
+app.use(express.json())
 app.use(users);
 
 // Get mongoDB cloud instance link
